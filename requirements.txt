@@ -2,7 +2,7 @@ aiohttp
 aiohttp-jinja2
 telethon
 cryptg
-pillow
+Pillow
 aiohttp_session[secure]
 python-dotenv
 requests
