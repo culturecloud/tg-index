@@ -1,4 +1,5 @@
 import asyncio
+import uvloop
 import pathlib
 import logging
 
@@ -47,6 +48,7 @@ class Indexer:
             )
 
         middlewares.append(middleware_factory())
+        asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
         self.loop = asyncio.get_event_loop()
 
         self.server = web.Application(middlewares=middlewares)

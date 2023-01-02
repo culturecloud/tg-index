@@ -11,7 +11,7 @@ function downloadBlob(blob, filename) {
 
 function singleItemPlaylist(file, name, basicAuth) {
   name = decodeURI(name)
-  let hostUrl = `http://${basicAuth}${window.location.host}`;
+  let hostUrl = `https://${basicAuth}${window.location.host}`;
   let pd = "";
   pd += "#EXTM3U\n";
   pd += `#EXTINF: ${name}\n`;

@@ -1,20 +1,16 @@
 {% include 'header.html' %}
 
-<h1 class=" my-2 text-2xl text-center font-bold ">
+<h1 class="my-2 text-2xl text-center font-bold">
     Available Sources
 </h1>
-
-<div class="mx-auto my-1 p-1 w-full">
-    <div class="flex flex-wrap gap-4 justify-center w-full">
+    <div class="flex flex-wrap gap-3 justify-center items-center w-full">
         {% for chat in chats %}
         <a title="{{chat.name}}" href="/{{chat.page_id}}"
-            class="justify-items-center min-h-full w-5/12 sm:w-1/4 md:w-1/5 lg:w-1/6 rounded p-2 text-center break-words shadow hover:shadow-md hover:bg-blue-100 dark:bg-gray-500 dark:hover:bg-gray-400">
-
-                <img src="/{{chat.page_id}}/logo?big=1" class="w-full rounded-full">
-                <div class="p-1 mt-2 rounded text-white bg-blue-500 dark:bg-blue-500 dark:text-white">{{chat.name}}</div>
+            class="bg-gray-500 w-5/12 sm:w-1/4 md:w-1/5 lg:w-1/6 rounded text-center break-words shadow hover:shadow-lg">
+                <img src="/{{chat.page_id}}/logo?big=1" class="w-full rounded-t">
+                <div class="text-white p-2 font-semibold">{{chat.name}}</div>
         </a>
         {% endfor %}
     </div>
-</div>
 
 {% include 'footer.html' %}

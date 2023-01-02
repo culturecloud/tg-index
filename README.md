@@ -1,4 +1,5 @@
 # Telegram Index
+## ⚠️ PROJECT UNDERGOING MAJOR UPDATES. BUGS TO BE EXPECTED. THIS README IS NOT UP-TO-DATE.
 
 > Python Web App which indexes a telegram channel(or a chat) and serves its files for download.
 
