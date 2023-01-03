@@ -14,6 +14,10 @@ RUN pip3 install --no-cache-dir install wheel \
 # RUN
 FROM python:3.10-slim-buster as runner
 
+ENV TINI_VERSION v0.19.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+
 WORKDIR /project/
 
 RUN useradd -m -r culturecloud && \
@@ -26,4 +30,5 @@ COPY . .
 
 USER culturecloud
 
-CMD ["python3", "-m app"]
+ENTRYPOINT ["/tini", "--"]
+CMD ["python3", "-m", "app" ]
