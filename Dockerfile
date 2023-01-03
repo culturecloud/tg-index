@@ -8,7 +8,6 @@ RUN python3 -m venv --upgrade-deps /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 COPY requirements.txt .
-
 RUN pip3 install --no-cache-dir install wheel \
     && pip3 install --no-cache-dir -Ur requirements.txt
 
@@ -25,8 +24,8 @@ RUN useradd -m -r culturecloud && \
     chown culturecloud /project/
 
 COPY --from=compiler /opt/venv /opt/venv
-
 ENV PATH="/opt/venv/bin:$PATH"
+
 COPY . .
 
 USER culturecloud
