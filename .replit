@@ -1,4 +1,4 @@
-run = "bash start.sh"
+run = "clear; bash start.sh"
 
 [nix]
 channel = "unstable"
