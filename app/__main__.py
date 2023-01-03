@@ -51,8 +51,8 @@ class Indexer:
             )
 
         middlewares.append(middleware_factory())
-        asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-        self.loop = asyncio.get_event_loop()
+        self.loop = uvloop.new_event_loop()
+        asyncio.set_event_loop(self.loop)
 
         self.server = web.Application(middlewares=middlewares)
 
